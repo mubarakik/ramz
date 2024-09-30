@@ -1,0 +1,444 @@
+/*=============== GOOGLE FONTS ===============*/
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Russo+One&display=swap');
+
+/*=============== VARIABLES CSS ===============*/
+:root {
+  --header-height: 3.5rem;
+
+  /*========== Colors ==========*/
+  /*Color mode HSL(hue, saturation, lightness)*/
+  --first-color: hsl(18, 95%, 55%);
+  --second-color: hsl(42, 98%, 52%);
+  --first-gradient: linear-gradient(90deg,
+                  hsl(18, 95%, 55%),
+                  hsl(18, 98%, 64%));
+  --title-color: hsl(255, 12%, 12%);
+  --text-color: hsl(225, 12%, 24%);
+  --text-color-light: hsl(255, 4%, 70%);
+  --body-color: hsl(0, 0%, 100%);
+  --container-color: hsl(0, 0%, 100%);
+  --white-color: hsl(0, 0%, 100%);
+  --black-color: hsl(255, 20%, 10%);
+  --gray-border: hsl(255, 6%, 90%);
+  --black-border: hsl(255, 10%, 20%);
+
+  /*========== Font and typography ==========*/
+  /*.5rem = 8px | 1rem = 16px ...*/
+  --header-font:"Russo One";
+  --body-font: "Lato", sans-serif;
+  --big-font-size: 2.25rem;
+  --h1-font-size: 1.5rem;
+  --h2-font-size: 1.25rem;
+  --h3-font-size: 1rem;
+  --normal-font-size: .938rem;
+  --small-font-size: .813rem;
+  --smaller-font-size: .713rem;
+
+  /*========== Font weight ==========*/
+  --font-regular: 400;
+  --font-medium: 500;
+  --font-semi-bold: 600;
+  --font-bold: 700;
+
+  /*========== z index ==========*/
+  --z-tooltip: 10;
+  --z-fixed: 100;
+}
+
+/*========== Responsive typography ==========*/
+@media screen and (min-width: 1150px) {
+  :root {
+    --big-font-size: 3.5rem;
+    --h1-font-size: 2.25rem;
+    --h2-font-size: 1.5rem;
+    --h3-font-size: 1.25rem;
+    --normal-font-size: 1rem;
+    --small-font-size: .875rem;
+  }
+}
+
+/*=============== BASE ===============*/
+* {
+  /* box-sizing: border-box; */
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--body-font);
+  font-size: var(--normal-font-size);
+  background-color: var(--body-color);
+  color: var(--text-color);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: var(--title-color);
+  font-weight: var(--font-semi-bold);
+  font-family: var(--header-font);
+}
+
+p{
+  line-height: 180%;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+main,header{
+  /* background-color: rgba(0, 0, 0, 0.252); */
+}
+/*=============== REUSABLE CSS CLASSES ===============*/
+.container {
+  max-width: 1120px;
+  margin-inline: 1.5rem;
+}
+
+.grid {
+  display: grid;
+  gap: 1.5rem;
+}
+
+
+.wrapper{
+  max-width: 1270px;
+  width: 100%;
+  margin: 0 auto;
+  padding:0 20px;    
+}
+
+.section {
+  padding-block: 5rem 1rem;
+}
+.section__title, 
+.section__subtitle {
+  text-align: center;
+}
+
+.section__title {
+  font-size: var(--h1-font-size);
+  font-weight: var(--font-bold);
+  margin-bottom: 1.5rem;
+}
+
+.section__subtitle {
+  display: block;
+  font-size: var(--normal-font-size);
+  font-weight: var(--font-semi-bold);
+  color: var(--second-color);
+  margin-bottom: .5rem;
+}
+
+.cta{
+  padding: 0.8rem 1.5rem;
+}
+
+
+
+/*=============== HEADER & NAV ===============*/
+
+/* Header contact banner */
+.header__banner{
+  display:flex;
+  justify-content: space-between; 
+  padding:0.2rem 1.2rem;
+  border-bottom: 1px solid rgb(190, 190, 190);
+}
+
+.header__banner .banner__info,
+.header__banner .banner__social__media{
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+
+.banner__info li{
+  margin-right: 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  span{
+    font-size: var(--smaller-font-size);
+    
+  }
+}
+
+.header__banner a{
+  color: rgb(72, 52, 52);
+}
+
+.banner__social__media li{
+  margin-left: 1.2rem;
+}
+
+/* Navigation for web */
+.nav__bar{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5rem 0;
+}
+
+.nav__bar .nav__logo{
+  height: 40px;
+}
+
+.nav__bar .nav__list{
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+}
+
+.nav__bar .nav__list .nav__item:nth-last-child(-n+1){
+  
+  background-color: rgb(194, 194, 194);
+  padding: 1rem 2rem;
+
+  a{
+    color:rgb(58, 58, 58);
+  }
+}
+
+/* Navigation for mobile devices */
+
+
+/* Show menu */
+
+
+/* Change background header */
+
+
+/* Active link */
+
+
+/*=============== HOME ===============*/
+.home{
+  background-color: rgba(0, 0, 0, 0.479); 
+  padding: 6rem 0;
+  position:relative;
+  overflow: hidden;
+}
+
+.hero__content{
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  
+}
+
+.hero__title{
+  font-size: 4rem;
+  font-weight: bold;
+  color: aliceblue;
+}
+
+.hero__description{
+  font-size: 1rem;
+  max-width: max(500px,50%);
+  color: aliceblue;
+}
+
+.hero__cta{
+  align-self: start;
+  background-color: white;
+  text-align: rgb(194, 194, 194);
+  
+}
+
+video{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  min-width: 100%;
+  min-height: 100%;
+  z-index: -1;
+
+  source{
+      object-fit:contain;
+  }
+
+}
+
+/*=============== BUTTON ===============*/
+
+
+/*=============== ABOUT ===============*/
+.about{
+  /* background-color: white; */
+  padding:3rem 0;
+}
+
+.about__content{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.about__details{
+  flex:1;
+  max-width: 600px;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.about__img{
+  aspect-ratio: 1/1;
+  width: 500px;  
+  background-color: rgb(190, 190, 190);
+}
+
+.about__cta{
+  background-color: rgb(190, 190, 190);
+  color:white;
+  align-self: start;
+}
+
+
+/*=============== SERVICES ===============*/
+.services{
+  background-color: rgb(252 252 252);
+  display: grid;
+  place-content: center;
+}
+
+.service__details{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 4rem 0;  
+}
+
+.services__header{
+
+}
+
+.services__description{
+
+}
+
+.services__grid{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows:1fr 1fr;
+  row-gap: 1.5rem;
+  column-gap: 1.5rem;
+  margin-top: 3rem;
+  
+}
+
+.service__item{
+  background-color: white;
+  box-shadow: 0px 0px 20px rgba(200, 200, 200, 0.13);
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap:1.2rem;
+}
+
+.service__item .service__item__icon{
+  aspect-ratio: 1/1;
+  width: 80px;
+  background-color: rgb(215, 215, 215);
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  i{
+    font-size: 1.5rem;    
+  }
+}
+
+/* ============== WHY US ================ */
+
+.why_us{
+  background-color: rgb(252 252 252);
+  display: grid;
+  place-content: center;
+}
+
+.why_us__details{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 4rem 0;  
+}
+
+.why_us__header{
+
+}
+
+.why_us__grid{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  column-gap: 1.5rem;
+  margin-top: 1.5rem;
+  
+}
+
+.why_us__item{
+  background-color: white;
+  box-shadow: 0px 0px 20px rgba(200, 200, 200, 0.13);
+  padding: 1.5rem;
+  display: flex;
+  align-items: start;
+  gap:1.2rem;
+}
+
+.why_us__item .why_us__item__count{
+  aspect-ratio: 1/1;
+  height: 72%;
+  background-color: rgb(215, 215, 215);
+  display: grid;
+  place-items: center;
+  font-family: var(--header-font);
+  font-size: 2rem;
+}
+/* Swiper class */
+
+
+/*=============== PROJECTS ===============*/
+
+
+/*=============== CONTACT ===============*/
+
+
+/*=============== FOOTER ===============*/
+
+
+/*=============== SCROLL BAR ===============*/
+
+
+/*=============== SCROLL UP ===============*/
+
+
+/* Show Scroll Up */
+
+
+/*=============== BREAKPOINTS ===============*/
+/* For small devices */
+
+
+/* For medium devices */
+
+
+/* For large devices */
