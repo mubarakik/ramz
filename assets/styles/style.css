@@ -446,12 +446,67 @@ video{
 
 /*=============== PROJECTS ===============*/
 
+.projects{
+  padding:5rem 0;
+}
+
+.projects .wrapper{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  
+}
+
+.projects__grid{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  column-gap: 2rem;
+  margin-top: 1.5rem;
+}
+
+.project__item{
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 0 10px var(--gray-border);
+}
+
+.project__item__img{
+  width:100%;
+  aspect-ratio: 1.5/1;
+  background-color: var(--gray-border);
+}
+
+.project_details{
+  padding:1.5rem 1rem;
+}
+
+.project__item__description{
+  line-height: 150%;
+  margin-top: 1rem;
+}
 
 /*=============== CONTACT ===============*/
 
 
 /*=============== FOOTER ===============*/
+.footer{
+  background-color: rgba(55 55 55);
+  padding:5rem 0;
 
+}
+
+.footer .wrapper{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  color: white;
+  column-gap: 2rem;
+
+}
+
+.footer__item{
+  display:flex;
+  flex-direction: column;
+}
 
 /*=============== SCROLL BAR ===============*/
 
