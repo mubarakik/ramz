@@ -462,6 +462,11 @@ video{
   text-align: center;
 }
 /* Swiper class start*/
+
+.swiper {
+  padding-bottom: 40px;
+}
+
 /* Navigation arrows */
 .swiper-button-next,
 .swiper-button-prev {
