@@ -204,7 +204,7 @@ nav .wrapper{
 }
 
 nav .wrapper .nav__logo{
-  height: clamp(1.5rem, 4vw + 1rem, 3.5rem);
+  height: clamp(1.5rem, 4vw + 1rem, 2.5rem);
 }
 
 nav .wrapper .nav__list{
@@ -616,17 +616,50 @@ video{
     grid-template-columns: 1fr 1fr;
 
   }
-  
-
-
-  
-
-
 }
 
 /* For large devices */
-@media (max-width: 992px) {
+@media (min-width: 768px) {
   /* Styles for large devices */
+  /*=============== ABOUT ===============*/
+
+  .about__details{
+    flex:1;
+    max-width: 600px;
+    margin-bottom: 0; 
+  }
+
+  .about__img{  
+    flex:1;
+    max-width: 400px;
+  }
+  
+  /*=============== SERVICES ===============*/
+  .services__grid{
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+
+  /* ============== WHY US ================ */
+  .why_us__grid{
+    grid-template-columns: 1fr 1fr 1fr;  
+  }
+
+  /*=============== PROJECTS ===============*/
+
+  .projects__grid{
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  /*=============== FOOTER ===============*/
+  .footer .wrapper{
+    grid-template-columns: 1fr 1fr 1fr;
+
+  }
+  
+
+
+  
 
 }
 
