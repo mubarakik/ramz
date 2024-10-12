@@ -263,6 +263,7 @@ nav .wrapper .nav__list{
 .hero__title{
   font-size: clamp(1.5rem, 4vw + 1rem, 3.5rem);
   font-weight: bold;
+  letter-spacing: 0.25rem;
   color: aliceblue;
 }
 
