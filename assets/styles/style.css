@@ -461,21 +461,81 @@ video{
   color: rgb(119, 119, 119);
   text-align: center;
 }
-/* Swiper class */
+/* Swiper class start*/
+/* Navigation arrows */
+.swiper-button-next,
+.swiper-button-prev {
+    color: #333; /* Change arrow color */
+    background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white background */
+    width: 40px; /* Adjust size as needed */
+    height: 40px;
+    border-radius: 50%; /* Make arrows circular */
+    transition: all 0.3s ease;
+}
 
+.swiper-button-next:hover,
+.swiper-button-prev:hover {
+    background-color: rgba(255, 255, 255, 1); /* Fully opaque on hover */
+    color: #000;
+}
+
+.swiper-button-next::after,
+.swiper-button-prev::after {
+    font-size: 18px; /* Adjust arrow size */
+}
+
+/* Position arrows closer to the edge of the slider */
+.swiper-button-next {
+    right: 10px;
+}
+
+.swiper-button-prev {
+    left: 10px;
+}
+
+/* Pagination dots */
+.swiper-pagination-bullet {
+    width: 10px;
+    height: 10px;
+    background-color: #ccc; /* Change dot color */
+    opacity: 1;
+}
+
+.swiper-pagination-bullet-active {
+    background-color: #333; /* Change active dot color */
+}
+
+/* Adjust pagination position if needed */
+.swiper-pagination {
+    bottom: 10px !important;
+}
+
+/* Optional: Hide arrows on mobile */
+/* @media (max-width: 767px) {
+    .swiper-button-next,
+    .swiper-button-prev {
+        display: none;
+    }
+} */
+
+/* Swiper class end
 
 /*=============== PROJECTS ===============*/
 
 .projects{
-  padding:5rem 0;
+  padding:4rem 0;
 }
 
 .projects .wrapper{
   display: flex;
   flex-direction: column;
-  align-items: center;
-  
+  align-items: center;  
 }
+
+.swiper-wrapper{
+  margin-top: 2rem;
+}
+
 
 .projects__grid{
   display: grid;
