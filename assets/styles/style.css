@@ -285,7 +285,7 @@ nav .nav__list .nav__item:nth-last-child(-n+1){
 /*=============== HOME ===============*/
 .home{
   background-color: rgba(0, 0, 0, 0.479);
-  margin-top: 6rem; 
+  margin-top: 5rem; 
   padding: 5rem 0;
   position:relative;
   overflow: hidden;
@@ -727,6 +727,10 @@ video{
 /* For medium devices */
 @media (min-width: 480px) and (max-width: 768px) {
   /* Styles for medium devices (tablets) */
+  /*=============== HOME ===============*/
+  .home{
+    margin-top: 6rem; 
+  }
   /*=============== ABOUT ===============*/
 
   .about__details{
@@ -767,6 +771,7 @@ video{
 /* For large devices */
 @media (min-width: 768px) {
   /* Styles for large devices */
+
   /* ============== NAVIGATION ========== */
 
   /* Navigation for mobile */
