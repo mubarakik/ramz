@@ -438,7 +438,7 @@ video{
   /* background: #cb2d3e; 
   background: -webkit-linear-gradient(to right, #ef473a, #cb2d3e);  
   background: linear-gradient(to right, #ef473a, #cb2d3e); */
-  background-image: url('/assets/images/building-1.jpg');
+  background-image: url('../images/building-1.jpg');
   background-size: cover; /* Ensures the image covers the element completely */
   background-position: center; /* Centers the image within the element */
   background-repeat: no-repeat; /* Prevents the image from repeating */
