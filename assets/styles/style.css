@@ -9,15 +9,16 @@
   /*Color mode HSL(hue, saturation, lightness)*/
   --first-color: hsl(18, 95%, 55%);
   --second-color: hsl(42, 98%, 52%);
-  --first-gradient: linear-gradient(90deg,
-                  hsl(18, 95%, 55%),
-                  hsl(18, 98%, 64%));
+  --gradient-one: linear-gradient(to right, rgb(220, 20, 60), rgb(255, 0, 0));
+
+
   --title-color: hsl(255, 12%, 12%);
   --text-color: hsl(225, 12%, 24%);
   --text-color-light: hsl(255, 4%, 70%);
   --body-color: hsl(0, 0%, 100%);
-  --container-color: hsl(0, 0%, 100%);
-  --white-color: hsl(0, 0%, 100%);
+  --container-color: rgb(255,255, 255);
+  --white-color: rgb(250, 250, 250);
+  --red-color: rgb(220, 20, 60);
   --black-color: hsl(255, 20%, 10%);
   --gray-border: hsl(255, 6%, 90%);
   --black-border: hsl(255, 10%, 20%);
@@ -33,6 +34,8 @@
   --normal-font-size: .938rem;
   --small-font-size: .813rem;
   --smaller-font-size: .713rem;
+
+  --header-letter-spacing: 0.15rem;
 
   /*========== Font weight ==========*/
   --font-regular: 400;
@@ -191,7 +194,7 @@ main,header{
   margin-left: 1.2rem;
 }
 
-/* Navigation for web */
+/* Navigation for mobile */
 
 nav {
   padding: 0.8rem 0;
@@ -214,18 +217,34 @@ nav .wrapper .nav__list{
   align-items: center;
 }
 
-.nav__bar .nav__list .nav__item:nth-last-child(-n+1){
+nav .nav__list .nav__item:nth-last-child(-n+1){
   
-  background-color: rgb(194, 194, 194);
-  padding: 1rem 2rem;
+  background: var(--gradient-one);
+  padding: 0.85rem 1.25rem;
+  cursor: pointer;
 
   a{
-    color:rgb(58, 58, 58);
+    color:white;
+    border: none;
+  }
+
+  &:hover{
+    background-color: rgb(163, 4, 4);
+
   }
 }
 
+
 .nav__item a{
   color:rgb(58, 58, 58);
+  font-size: 0.85rem;
+  padding-bottom: 0.5rem;
+  transition: border-bottom 0.15s ease; 
+}
+
+.nav__item a:is(:hover,:active){
+  border-bottom: 0.2rem solid var(--red-color);
+  color:var(--red-color);
 }
 
 .nav__menu__btn{
@@ -275,10 +294,13 @@ nav .wrapper .nav__list{
 
 .hero__cta{
   align-self: start;
-  background-color: white;
+  background: var(--gradient-one);
   text-align: rgb(194, 194, 194);
-  color:rgb(58, 58, 58);
+  color:white; 
   
+  &:hover{
+    background-color: rgb(183, 9, 9);
+  }
 }
 
 video{
@@ -328,9 +350,13 @@ video{
 }
 
 .about__cta{
-  background-color: rgb(190, 190, 190);
-  color:white;
+  background: var(--gradient-one);
+  color:var(--white-color);
   align-self: start;
+
+  &:hover{
+    background-color: rgb(183, 9, 9);
+  }
 }
 
 
@@ -366,7 +392,7 @@ video{
 }
 
 .service__item{
-  background-color: white;
+  background-color: var(--container-color);
   box-shadow: 0px 0px 20px rgba(200, 200, 200, 0.13);
   padding: 1.5rem;
   display: flex;
@@ -378,21 +404,49 @@ video{
 .service__item .service__item__icon{
   aspect-ratio: 1/1;
   width: 80px;
-  background-color: rgb(215, 215, 215);
+  background: var(--gradient-one);
   display: grid;
   place-items: center;
   border-radius: 50%;
   i{
-    font-size: 1.5rem;    
+    font-size: 1.5rem;
+    color:var(--white-color);    
   }
 }
 
 /* ============== WHY US ================ */
 
 .why_us{
-  background-color: rgb(119, 119, 119);
+  /* background: #cb2d3e; 
+  background: -webkit-linear-gradient(to right, #ef473a, #cb2d3e);  
+  background: linear-gradient(to right, #ef473a, #cb2d3e); */
+  background-image: url('/assets/images/building-1.jpg');
+  background-size: cover; /* Ensures the image covers the element completely */
+  background-position: center; /* Centers the image within the element */
+  background-repeat: no-repeat; /* Prevents the image from repeating */
+
+  
   display: grid;
   place-content: center;
+  position: relative;
+}
+
+/* Add a transparent overlay */
+.why_us::before {
+  content: "";
+  background-color: rgba(198, 0, 0, 0.8); /* Red with 50% opacity */
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1; /* Ensure the overlay is on top of the background image */
+}
+
+/* Ensures content is on top of the overlay */
+.why_us > * {
+  position: relative;
+  z-index: 2; /* Ensures content is above the overlay */
 }
 
 .why_us .wrapper{
@@ -403,7 +457,8 @@ video{
 }
 
 .why_us__header{
-  /* color:rgb(233, 233, 233); */
+  color:var(--white-color);
+  letter-spacing: 0.1rem;
 }
 
 .why_us__grid{
@@ -424,7 +479,8 @@ video{
 .why_us__item .why_us__item__count{
   aspect-ratio: 1/1;
   height: 3.75rem;
-  background-color: rgb(215, 215, 215);
+  background-color: var(--white-color);
+  color: var(--red-color);
   display: grid;
   place-items: center;
   font-family: var(--header-font);
@@ -432,11 +488,12 @@ video{
 }
 
 .why_us__item__title{
-
+  color:var(--white-color);
+  letter-spacing : var(--header-letter-spacing);
 }
 
 .why_us__item__description{
-  color:rgb(233, 233, 233);
+  color:var(--white-color);
 }
 
 .why__us__ctas{
@@ -448,17 +505,18 @@ video{
 
 .why__us__ctas .cta{
   min-width: 160px;
+  color:var(--red-color);
 }
 
 .why__us__ctas .cta:nth-child(1){
-  border:1px solid rgb(233, 233, 233);
-  color:rgb(233, 233, 233);
+  border:1px solid var(--white-color);
+  color:var(--white-color);
   text-align: center;
 }
 
 .why__us__ctas .cta:nth-child(2){
-  background-color: rgb(233, 233, 233);
-  color: rgb(119, 119, 119);
+  background-color: var(--white-color);
+  color: var(--red-color);
   text-align: center;
 }
 /* Swiper class start*/
@@ -576,7 +634,7 @@ video{
 
 /*=============== FOOTER ===============*/
 .footer{
-  background-color: rgba(55 55 55);
+  background-color: rgb(33, 37, 41);
   padding:5rem 0;
 
 }
@@ -593,10 +651,14 @@ video{
 .footer__item{
   display:flex;
   flex-direction: column;
+  align-items: flex-start;
 }
 
 .footer__item .title{
-  color:rgb(119, 119, 119);
+  /* color:rgb(119, 119, 119); */
+  color:var(--red-color);
+  padding-bottom: 0.3rem;
+  border-bottom: 0.15rem solid var(--red-color);
 }
 
 .footer__item .content{
@@ -687,6 +749,20 @@ video{
 /* For large devices */
 @media (min-width: 768px) {
   /* Styles for large devices */
+  /* ============== NAVIGATION ========== */
+
+  /* Navigation for mobile */
+
+  nav .wrapper .nav__list{    
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+  }
+
+  .nav__menu__btn{
+    display:none;
+  }
+
   /*=============== ABOUT ===============*/
 
   .about__details{
