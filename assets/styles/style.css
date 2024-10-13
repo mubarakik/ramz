@@ -285,7 +285,7 @@ nav .nav__list .nav__item:nth-last-child(-n+1){
 /*=============== HOME ===============*/
 .home{
   background-color: rgba(0, 0, 0, 0.479);
-  margin-top: 5rem; 
+  margin-top: 4.5rem; 
   padding: 5rem 0;
   position:relative;
   overflow: hidden;
