@@ -9,6 +9,7 @@
   --brand-color: #B22222;
   --text-color-black: #131348;
   --text-color-black-light: #4C4F54;
+  --text-color-white: #ffffff;
 
   --text-color-gray: #e3e3e3;
   --surface-color-pink: #FFECE8;
@@ -18,6 +19,9 @@
   --border-color-black: #131348;
   --border-color-gray: #e3e3e3;
   --border-color-white: #ffffff;
+
+  --border-radius-big: 1rem;
+  --border-radius-small: 0.5rem;
 
   
 
@@ -702,6 +706,79 @@ nav .wrapper .nav__list{
 }
 /* ------------------------------ */
 
+
+/* ============== AT A GLANCE ==========================*/
+.at-a-glance{
+  background-color: var(--surface-color-red);
+  color: var(--text-color-white);
+}
+
+.at-a-glance .wrapper{
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap:1.5rem;
+}
+
+.at-a-glance__content{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap:2rem;
+}
+
+.at-a-glance__content__header{
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+}
+
+.at-a-glance__content__body{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap:1.5rem;
+}
+
+.at-a-glance__content__body img{
+  max-width: 34rem;
+  aspect-ratio: 2/1;
+  border-radius: var(--border-radius-small);
+}
+
+.at-a-glance__content__body__text{
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap:1.5rem;
+  max-width: 34rem;
+}
+
+.at-a-glance__content__body__item{
+
+}
+
+
+.at-a-glance__stats{
+  display: flex;
+  flex-direction: row;
+  gap:1.5rem;
+}
+
+.at-a-glance .stats__item{
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  border-left: 1px solid var(--border-color-white);
+  padding-left: 1rem;
+}
+
+.at-a-glance__stats__item__title{
+  font-size: var(--h3-font-size);
+}
+
+
+/* ------------------------------------------------------------- */
 
 /*=============== CONTACT ===============*/
 
